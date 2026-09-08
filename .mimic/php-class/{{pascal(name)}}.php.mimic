@@ -1,6 +1,6 @@
 <?php
 
-class {{ pascal(className) }} {
+class {{ pascal(name) }} {
 
     public function __construct()
     {

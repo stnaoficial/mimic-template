@@ -1,4 +1,4 @@
-class {{ pascal(className) }} {
+class {{ pascal(name) }} {
 
     constructor() {
         // TODO
