@@ -1,0 +1,6 @@
+class {{ pascal(className) }} {
+
+    public constructor() {
+        // TODO
+    }
+}

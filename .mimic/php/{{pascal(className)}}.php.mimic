@@ -1,0 +1,9 @@
+<?php
+
+class {{ pascal(className) }} {
+
+    public function __construct()
+    {
+        // TODO
+    }
+}
