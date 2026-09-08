@@ -1,0 +1,6 @@
+js-function -> .mimic/js/{{camel(functionName)}}.js.mimic
+js-class -> .mimic/js/{{pascal(className)}}.js.mimic
+ts-function -> .mimic/ts/{{camel(functionName)}}.ts.mimic
+ts-class -> .mimic/ts/{{pascal(className)}}.ts.mimic
+php-function -> .mimic/php/{{snake(lower(functionName))}}.php.mimic
+php-class -> .mimic/php/{{pascal(className)}}.php.mimic
