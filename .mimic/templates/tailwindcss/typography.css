@@ -1,0 +1,55 @@
+@utility typography-heading1 {
+  @apply font-semibold text-5xl leading-16 tracking-tighter;
+}
+
+@utility typography-heading2 {
+  @apply font-semibold text-4xl leading-12 tracking-tighter;
+}
+
+@utility typography-heading3 {
+  @apply font-medium text-3xl leading-10 tracking-tighter;
+}
+
+@utility typography-heading4 {
+  @apply font-medium text-2xl leading-8 tracking-tight;
+}
+
+@utility typography-heading5 {
+  @apply font-semibold text-xl leading-7 tracking-tight;
+}
+
+@utility typography-heading6 {
+  @apply font-semibold text-lg leading-6 tracking-tight;
+}
+
+@utility typography-title1 {
+  @apply text-base leading-6 font-medium;
+}
+
+@utility typography-title2 {
+  @apply text-sm leading-5 font-normal;
+}
+
+@utility typography-subtitle1 {
+  @apply text-base leading-6 font-normal;
+}
+
+@utility typography-subtitle2 {
+  @apply text-sm leading-5 font-medium;
+}
+
+@utility typography-body1 {
+  @apply text-base leading-6 font-light;
+}
+
+@utility typography-body2 {
+  @apply text-sm leading-5 font-normal;
+}
+
+@utility typography-overline {
+  @apply text-xs leading-4 font-normal;
+}
+
+@utility typography-caption {
+  @apply text-xs leading-4 font-normal;
+}
