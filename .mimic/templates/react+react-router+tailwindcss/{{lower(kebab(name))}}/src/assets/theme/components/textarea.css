@@ -1,0 +1,21 @@
+@utility textarea {
+  @apply block;
+  @apply font-medium text-sm leading-6;
+  @apply px-6 py-4;
+  @apply outline-0 resize-none;
+  @apply transition-all duration-150 ease-in-out;
+
+  &:focus {
+    @apply ring-4 ring-blue-500;
+  }
+}
+
+@utility textarea-black {
+  @apply text-gray-100;
+  @apply bg-gray-900;
+}
+
+@utility textarea-white {
+  @apply text-gray-900;
+  @apply bg-gray-100;
+}
