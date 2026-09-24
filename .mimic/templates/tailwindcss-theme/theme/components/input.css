@@ -1,0 +1,21 @@
+@utility input {
+  @apply px-4 py-2;
+  @apply font-normal text-sm leading-6 text-gray-900 placeholder-gray-500;
+  @apply bg-white;
+  @apply outline-hidden shadow-[inset_0_0_0_1px] shadow-gray-300 ring-0 rounded-xl;
+  @apply transition-all duration-150 ease-in-out;
+
+  &:focus {
+    @apply shadow-blue-500 ring-1 ring-blue-500;
+  }
+
+  &[aria-invalid="true"] {
+    @apply shadow-red-500 ring-1 ring-red-500;
+  }
+
+  @variant dark {
+    @apply text-gray-100 placeholder-gray-400;
+    @apply bg-gray-900;
+    @apply shadow-[inset_0_0_0_1px] shadow-gray-700;
+  }
+}
