@@ -1,8 +1,11 @@
 @utility button {
+  --button-padding-x: 1rem;
+  --button-padding-y: 0.5rem;
+
   @apply block;
   @apply text-base leading-6 font-medium text-center;
-  @apply px-4 py-2;
-  @apply outline-0 ring-0 ring-sky-500/50 focus:ring-2 rounded-lg;
+  @apply px-(--button-padding-x) py-(--button-padding-y);
+  @apply outline-0 rounded-lg;
   @apply cursor-pointer;
   @apply transition-all duration-150 ease-in-out;
 }
@@ -12,7 +15,14 @@
 }
 
 @utility button-small {
-  @apply text-sm leading-4 px-2 py-1 rounded-md;
+  --button-padding-x: 0.5rem;
+  --button-padding-y: 0.25rem;
+
+  @apply text-sm leading-4 rounded-md;
+}
+
+@utility button-even {
+  @apply p-(--button-padding-y);
 }
 
 @utility button-fill {
@@ -123,176 +133,88 @@
   }
 }
 
-@utility button-primary {
+@utility button-black {
   &.button-fill {
     --button-foreground-color: var(--color-white);
-    --button-background-color: var(--color-primary-600);
+    --button-background-color: var(--color-black);
 
     &:is(:hover, :focus) {
-      --button-background-color: var(--color-primary-500);
+      --button-background-color: var(--color-gray-900);
     }
 
     &:disabled {
-      --button-foreground-color: var(--color-primary-500);
-      --button-background-color: var(--color-primary-100);
-    }
-
-    @variant dark {
-      --button-foreground-color: var(--color-white);
-      --button-background-color: var(--color-primary-500);
-
-      &:hover,
-      &:focus {
-        --button-background-color: var(--color-primary-400);
-      }
-
-      &:disabled {
-        --button-foreground-color: var(--color-primary-500);
-        --button-background-color: var(--color-primary-900);
-      }
+      --button-foreground-color: var(--color-gray-300);
+      --button-background-color: var(--color-gray-700);
     }
   }
 
   &.button-line {
-    --button-foreground-color: var(--color-primary-600);
-    --button-border-color: var(--color-primary-500);
+    --button-foreground-color: var(--color-gray-900);
+    --button-border-color: var(--color-gray-700);
 
     &:is(:hover, :focus) {
-      --button-background-color: var(--color-primary-100);
-      --button-border-color: var(--color-primary-600);
+      --button-background-color: var(--color-gray-100);
+      --button-border-color: var(--color-gray-800);
     }
 
     &:disabled {
-      --button-foreground-color: var(--color-primary-500);
-      --button-border-color: var(--color-primary-300);
-    }
-
-    @variant dark {
-      --button-foreground-color: var(--color-primary-400);
-      --button-border-color: var(--color-primary-500);
-
-      &:hover,
-      &:focus {
-        --button-background-color: var(--color-primary-900);
-        --button-border-color: var(--color-primary-400);
-      }
-
-      &:disabled {
-        --button-foreground-color: var(--color-primary-500);
-        --button-border-color: var(--color-primary-700);
-      }
+      --button-foreground-color: var(--color-gray-500);
+      --button-border-color: var(--color-gray-300);
     }
   }
 
   &.button-text {
-    --button-foreground-color: var(--color-primary-500);
+    --button-foreground-color: var(--color-gray-900);
 
     &:is(:hover, :focus) {
-      --button-background-color: var(--color-primary-100);
+      --button-background-color: var(--color-gray-100);
     }
 
     &:disabled {
-      --button-foreground-color: var(--color-primary-400);
-    }
-
-    @variant dark {
-      --button-foreground-color: var(--color-primary-400);
-
-      &:hover,
-      &:focus {
-        --button-background-color: var(--color-primary-900);
-      }
-
-      &:disabled {
-        --button-foreground-color: var(--color-primary-500);
-      }
+      --button-foreground-color: var(--color-gray-500);
     }
   }
 }
 
-@utility button-secondary {
+@utility button-white {
   &.button-fill {
-    --button-foreground-color: var(--color-white);
-    --button-background-color: var(--color-secondary-900);
+    --button-foreground-color: var(--color-gray-900);
+    --button-background-color: var(--color-white);
 
     &:is(:hover, :focus) {
-      --button-background-color: var(--color-secondary-800);
+      --button-background-color: var(--color-gray-100);
     }
 
     &:disabled {
-      --button-foreground-color: var(--color-secondary-300);
-      --button-background-color: var(--color-secondary-700);
-    }
-
-    @variant dark {
-      --button-foreground-color: var(--color-black);
-      --button-background-color: var(--color-secondary-100);
-
-      &:hover,
-      &:focus {
-        --button-background-color: var(--color-secondary-200);
-      }
-
-      &:disabled {
-        --button-foreground-color: var(--color-secondary-700);
-        --button-background-color: var(--color-secondary-300);
-      }
+      --button-foreground-color: var(--color-gray-500);
+      --button-background-color: var(--color-white);
     }
   }
 
   &.button-line {
-    --button-foreground-color: var(--color-secondary-900);
-    --button-border-color: var(--color-secondary-500);
+    --button-foreground-color: var(--color-gray-900);
+    --button-border-color: var(--color-gray-300);
 
     &:is(:hover, :focus) {
-      --button-background-color: var(--color-secondary-100);
-      --button-border-color: var(--color-secondary-600);
+      --button-background-color: var(--color-gray-100);
+      --button-border-color: var(--color-gray-400);
     }
 
     &:disabled {
-      --button-foreground-color: var(--color-secondary-500);
-      --button-border-color: var(--color-secondary-300);
-    }
-
-    @variant dark {
-      --button-foreground-color: var(--color-secondary-100);
-      --button-border-color: var(--color-secondary-500);
-
-      &:hover,
-      &:focus {
-        --button-background-color: var(--color-secondary-900);
-        --button-border-color: var(--color-secondary-400);
-      }
-
-      &:disabled {
-        --button-foreground-color: var(--color-secondary-500);
-        --button-border-color: var(--color-secondary-700);
-      }
+      --button-foreground-color: var(--color-gray-500);
+      --button-border-color: var(--color-gray-300);
     }
   }
 
   &.button-text {
-    --button-foreground-color: var(--color-secondary-900);
+    --button-foreground-color: var(--color-gray-900);
 
     &:is(:hover, :focus) {
-      --button-background-color: var(--color-secondary-100);
+      --button-background-color: var(--color-gray-100);
     }
 
     &:disabled {
-      --button-foreground-color: var(--color-secondary-500);
-    }
-
-    @variant dark {
-      --button-foreground-color: var(--color-secondary-100);
-
-      &:hover,
-      &:focus {
-        --button-background-color: var(--color-secondary-900);
-      }
-
-      &:disabled {
-        --button-foreground-color: var(--color-secondary-500);
-      }
+      --button-foreground-color: var(--color-gray-500);
     }
   }
 }
