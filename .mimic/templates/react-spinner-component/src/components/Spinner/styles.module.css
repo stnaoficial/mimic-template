@@ -1,0 +1,9 @@
+.animate {
+    animation: fade 1s var(--animation-delay) ease-out infinite normal none running;
+}
+
+@keyframes fade {
+    100% {
+      opacity: 5%;
+    }
+}

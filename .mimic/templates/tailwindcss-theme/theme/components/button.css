@@ -1,13 +1,10 @@
 @utility button {
-  --button-padding-x: 1rem;
-  --button-padding-y: 0.5rem;
-
   @apply block;
   @apply text-base leading-6 font-medium text-center;
-  @apply px-(--button-padding-x) py-(--button-padding-y);
-  @apply outline-0 rounded-lg;
+  @apply px-4 py-2;
+  @apply rounded-lg;
   @apply cursor-pointer;
-  @apply transition-all duration-150 ease-in-out;
+  @apply transition-colors duration-150 ease-in-out;
 }
 
 @utility button-rounded {
@@ -15,119 +12,120 @@
 }
 
 @utility button-small {
-  --button-padding-x: 0.5rem;
-  --button-padding-y: 0.25rem;
-
-  @apply text-sm leading-4 rounded-md;
+  @apply text-sm leading-4 px-2 py-1 rounded-md;
 }
 
-@utility button-even {
-  @apply p-(--button-padding-y);
+@utility button-symmetric {
+  @apply p-2;
+
+  &.button-small {
+    @apply p-1;
+  }
 }
 
 @utility button-fill {
-  @apply text-[var(--button-foreground-color)] bg-[var(--button-background-color)];
-  @apply hover:not-disabled:bg-[var(--button-background-color)];
-  @apply focus:not-disabled:bg-[var(--button-background-color)];
-  @apply disabled:text-[var(--button-foreground-color)] disabled:bg-[var(--button-background-color)];
+  @apply text-(--button-foreground-color) bg-(--button-background-color);
+  @apply hover:not-disabled:bg-(--button-background-color);
+  @apply focus:not-disabled:bg-(--button-background-color);
+  @apply disabled:text-(--button-foreground-color) disabled:bg-(--button-background-color);
 }
 
 @utility button-line {
-  @apply text-[var(--button-foreground-color)] shadow-[inset_0_0_0_1px] shadow-[color:var(--button-border-color)];
-  @apply hover:not-disabled:bg-[var(--button-background-color)] hover:not-disabled:shadow-[color:var(--button-border-color)];
-  @apply focus:not-disabled:bg-[var(--button-background-color)] focus:not-disabled:shadow-[color:var(--button-border-color)];
-  @apply disabled:text-[var(--button-foreground-color)] disabled:shadow-[color:var(--button-border-color)];
+  @apply text-(--button-foreground-color) shadow-[inset_0_0_0_1px] shadow-(color:--button-border-color);
+  @apply hover:not-disabled:bg-(--button-background-color) hover:not-disabled:shadow-(color:--button-border-color);
+  @apply focus:not-disabled:bg-(--button-background-color) focus:not-disabled:shadow-(color:--button-border-color);
+  @apply disabled:text-(--button-foreground-color) disabled:shadow-(color:--button-border-color);
 }
 
 @utility button-text {
-  @apply font-normal text-[var(--button-foreground-color)];
-  @apply hover:not-disabled:bg-[var(--button-background-color)];
-  @apply focus:not-disabled:bg-[var(--button-background-color)];
-  @apply disabled:text-[var(--button-foreground-color)];
+  @apply font-normal text-(--button-foreground-color);
+  @apply hover:not-disabled:bg-(--button-background-color);
+  @apply focus:not-disabled:bg-(--button-background-color);
+  @apply disabled:text-(--button-foreground-color);
 }
 
-@utility button-gray {
+@utility button-primary {
   &.button-fill {
-    --button-foreground-color: var(--color-gray-900);
-    --button-background-color: var(--color-gray-100);
+    --button-foreground-color: var(--color-white);
+    --button-background-color: var(--color-primary-600);
 
     &:is(:hover, :focus) {
-      --button-background-color: var(--color-gray-200);
+      --button-background-color: var(--color-primary-500);
     }
 
     &:disabled {
-      --button-foreground-color: var(--color-gray-500);
-      --button-background-color: var(--color-gray-50);
+      --button-foreground-color: var(--color-primary-500);
+      --button-background-color: var(--color-primary-100);
     }
 
     @variant dark {
-      --button-foreground-color: var(--color-gray-100);
-      --button-background-color: var(--color-gray-900);
+      --button-foreground-color: var(--color-white);
+      --button-background-color: var(--color-primary-500);
 
       &:hover,
       &:focus {
-        --button-background-color: var(--color-gray-800);
+        --button-background-color: var(--color-primary-400);
       }
 
       &:disabled {
-        --button-foreground-color: var(--color-gray-500);
-        --button-background-color: var(--color-gray-950);
+        --button-foreground-color: var(--color-primary-500);
+        --button-background-color: var(--color-primary-900);
       }
     }
   }
 
   &.button-line {
-    --button-foreground-color: var(--color-gray-900);
-    --button-border-color: var(--color-gray-300);
+    --button-foreground-color: var(--color-primary-600);
+    --button-border-color: var(--color-primary-500);
 
     &:is(:hover, :focus) {
-      --button-background-color: var(--color-gray-100);
-      --button-border-color: var(--color-gray-400);
+      --button-background-color: var(--color-primary-100);
+      --button-border-color: var(--color-primary-600);
     }
 
     &:disabled {
-      --button-foreground-color: var(--color-gray-500);
-      --button-border-color: var(--color-gray-200);
+      --button-foreground-color: var(--color-primary-500);
+      --button-border-color: var(--color-primary-300);
     }
 
     @variant dark {
-      --button-foreground-color: var(--color-gray-100);
-      --button-border-color: var(--color-gray-700);
+      --button-foreground-color: var(--color-primary-400);
+      --button-border-color: var(--color-primary-500);
 
       &:hover,
       &:focus {
-        --button-background-color: var(--color-gray-900);
-        --button-border-color: var(--color-gray-600);
+        --button-background-color: var(--color-primary-900);
+        --button-border-color: var(--color-primary-400);
       }
 
       &:disabled {
-        --button-foreground-color: var(--color-gray-500);
-        --button-border-color: var(--color-gray-800);
+        --button-foreground-color: var(--color-primary-500);
+        --button-border-color: var(--color-primary-700);
       }
     }
   }
 
   &.button-text {
-    --button-foreground-color: var(--color-gray-900);
+    --button-foreground-color: var(--color-primary-500);
 
     &:is(:hover, :focus) {
-      --button-background-color: var(--color-gray-100);
+      --button-background-color: var(--color-primary-100);
     }
 
     &:disabled {
-      --button-foreground-color: var(--color-gray-500);
+      --button-foreground-color: var(--color-primary-400);
     }
 
     @variant dark {
-      --button-foreground-color: var(--color-gray-100);
+      --button-foreground-color: var(--color-primary-400);
 
       &:hover,
       &:focus {
-        --button-background-color: var(--color-gray-900);
+        --button-background-color: var(--color-primary-900);
       }
 
       &:disabled {
-        --button-foreground-color: var(--color-gray-500);
+        --button-foreground-color: var(--color-primary-500);
       }
     }
   }
@@ -215,6 +213,93 @@
 
     &:disabled {
       --button-foreground-color: var(--color-gray-500);
+    }
+  }
+}
+
+@utility button-gray {
+  &.button-fill {
+    --button-foreground-color: var(--color-gray-900);
+    --button-background-color: var(--color-gray-100);
+
+    &:is(:hover, :focus) {
+      --button-background-color: var(--color-gray-200);
+    }
+
+    &:disabled {
+      --button-foreground-color: var(--color-gray-500);
+      --button-background-color: var(--color-gray-50);
+    }
+
+    @variant dark {
+      --button-foreground-color: var(--color-gray-100);
+      --button-background-color: var(--color-gray-900);
+
+      &:hover,
+      &:focus {
+        --button-background-color: var(--color-gray-800);
+      }
+
+      &:disabled {
+        --button-foreground-color: var(--color-gray-500);
+        --button-background-color: var(--color-gray-950);
+      }
+    }
+  }
+
+  &.button-line {
+    --button-foreground-color: var(--color-gray-900);
+    --button-border-color: var(--color-gray-300);
+
+    &:is(:hover, :focus) {
+      --button-background-color: var(--color-gray-100);
+      --button-border-color: var(--color-gray-400);
+    }
+
+    &:disabled {
+      --button-foreground-color: var(--color-gray-500);
+      --button-border-color: var(--color-gray-200);
+    }
+
+    @variant dark {
+      --button-foreground-color: var(--color-gray-100);
+      --button-border-color: var(--color-gray-700);
+
+      &:hover,
+      &:focus {
+        --button-background-color: var(--color-gray-900);
+        --button-border-color: var(--color-gray-600);
+      }
+
+      &:disabled {
+        --button-foreground-color: var(--color-gray-500);
+        --button-border-color: var(--color-gray-800);
+      }
+    }
+  }
+
+  &.button-text {
+    --button-foreground-color: var(--color-gray-900);
+
+    &:is(:hover, :focus) {
+      --button-background-color: var(--color-gray-100);
+    }
+
+    &:disabled {
+      --button-foreground-color: var(--color-gray-500);
+    }
+
+    @variant dark {
+      --button-foreground-color: var(--color-gray-100);
+
+      &:hover,
+      &:focus {
+        --button-background-color: var(--color-gray-900);
+      }
+
+      &:disabled {
+        --button-foreground-color: var(--color-gray-500);
+      }
     }
   }
 }

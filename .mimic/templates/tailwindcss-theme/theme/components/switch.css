@@ -1,0 +1,34 @@
+@utility switch {
+  --switch-width: 4rem;
+  --switch-height: 2.5rem;
+  --switch-background-color: var(--color-gray-500);
+  --switch-checked-background-color: var(--color-gray-900);
+
+  --switch-indicator-size: 2.25rem;
+  --switch-indicator-background-color: var(--color-white);
+
+  @apply block relative w-(--switch-width) h-(--switch-height) rounded-full;
+  @apply bg-(--switch-background-color) checked:bg-(--switch-checked-background-color);
+  @apply transition-colors duration-150 ease-in-out;
+  @apply cursor-pointer;
+  @apply appearance-none;
+
+  @apply before:absolute before:content-[''] before:left-0 before:top-1/2 checked:before:translate-x-[calc((var(--switch-width)-0.25rem)-100%)] before:-translate-y-1/2;
+  @apply before:size-(--switch-indicator-size) before:mx-0.5;
+  @apply before:bg-(--switch-indicator-background-color);
+  @apply before:transition-all before:duration-150 before:ease-in-out;
+  @apply before:rounded-full;
+
+  @variant dark {
+    --switch-background-color: var(--color-gray-500);
+    --switch-checked-background-color: var(--color-gray-100);
+
+    --switch-indicator-background-color: var(--color-black);
+  }
+}
+
+@utility switch-small {
+  --switch-width: 2.25rem;
+  --switch-height: 1.5rem;
+  --switch-indicator-size: 1.25rem;
+}
