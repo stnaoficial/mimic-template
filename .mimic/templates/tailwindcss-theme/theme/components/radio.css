@@ -1,0 +1,26 @@
+@utility radio {
+  --radio-size: 1.5rem;
+  --radio-background-color: var(--color-gray-500);
+  --radio-checked-background-color: var(--color-gray-900);
+
+  --radio-indicator-size: 0.5rem;
+  --radio-indicator-background-color: var(--color-white);
+
+  @apply block relative size-(--radio-size) rounded-full;
+  @apply bg-(--radio-background-color) checked:bg-(--radio-checked-background-color);
+  @apply transition-colors duration-150 ease-in-out;
+  @apply cursor-pointer;
+  @apply appearance-none;
+
+  @apply before:absolute before:content-[''] before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2;
+  @apply before:size-(--radio-indicator-size);
+  @apply before:bg-(--radio-indicator-background-color);
+  @apply before:rounded-full;
+
+  @variant dark {
+    --radio-background-color: var(--color-gray-500);
+    --radio-checked-background-color: var(--color-gray-100);
+
+    --radio-indicator-background-color: var(--color-black);
+  }
+}
