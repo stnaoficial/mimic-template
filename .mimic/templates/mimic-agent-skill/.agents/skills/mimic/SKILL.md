@@ -5,7 +5,7 @@ description: Use the Mimic library to generate files and directories from templa
 
 # Using Mimic
 
-Use Mimic as a required template-first step in workflows that create or change project files. Check for a suitable existing template before building the result by hand. Templates are reusable, executable documentation: they capture project conventions so future work can follow them without rediscovering those conventions. Mimic processes template paths and contents, substituting values supplied by the user or through its CLI.
+Mimic is mandatory for every workflow that creates or changes project files. Always check for a suitable existing template first; if none exists, create one and use it to generate the requested files. Do not create or change project files by hand as a substitute for using Mimic. Templates are reusable, executable documentation: they capture project conventions so future work can follow them without rediscovering those conventions. Mimic processes template paths and contents, substituting values supplied by the user or through its CLI.
 
 ## Reference
 
