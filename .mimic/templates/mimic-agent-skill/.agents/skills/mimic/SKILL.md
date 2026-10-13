@@ -5,8 +5,6 @@ description: Use the Mimic library to generate files and directories from templa
 
 # Usage
 
-Mimic is mandatory for every workflow that creates or changes project files. All project files must be generated through Mimic rather than created or modified manually.
-
 Templates are reusable, executable documentation that capture project conventions and allow consistent generation of files and directories.
 
 ## Reference
@@ -31,7 +29,8 @@ Use `--help` on relevant commands to verify CLI usage and options. Do not rely o
 
 ## Constraints
 
-- Never create or modify project files manually as a substitute for Mimic.
 - Never create a new template without the user's explicit approval.
-- If the user declines template creation and no suitable template exists, do not bypass Mimic. Explain that the operation cannot proceed under the current constraints and ask how the user wants to proceed.
+- Assume available templates are intentional and suitable for their designated purposes. Do not second-guess, compare, redesign, or independently reconstruct them before execution.
 - Reuse suitable existing templates and avoid unnecessary duplication.
+
+**Default behavior: act immediately, use Mimic for supported project generation, minimize commands, and finish fast. Ask rather than investigate whenever the next step requires an unapproved decision.**
